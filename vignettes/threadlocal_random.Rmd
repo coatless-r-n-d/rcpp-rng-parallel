@@ -33,17 +33,17 @@ if(requireNamespace("reshape2", quietly = TRUE) &
   long_cor_matrix = reshape2::melt(cor_matrix)
   
   # Plot with ggplot2
-  ggplot(data = long_cor_matrix) +
-    aes(x = Var1, y = Var2, fill = value) +
-    geom_tile() +
-    labs(
+  ggplot2::ggplot(data = long_cor_matrix) +
+    ggplot2::aes(x = Var1, y = Var2, fill = value) +
+    ggplot2::geom_tile() +
+    ggplot2::labs(
       title = "Correlation between streams",
       subtitle = "Light is highly correlated, dark is uncorrelated",
       caption = "Parallelized RNG via dqrng and OpenMP, @coatless",
       fill = "Correlation",
       x = "Stream R1",
       y = "Stream R2"
-    ) + theme_minimal()
+    ) + ggplot2::theme_minimal()
 }
 ```
 
