@@ -22,7 +22,7 @@ That said, the same results generalize to using
 
 ```{r}
 # Obtain 50 different RNG samples of size 100,000
-rng_sample = replicate(50, { rngparallel::draw_numeric_unif(1e5) })
+rng_sample = replicate(50, { RcppRNGParallel::draw_numeric_unif(1e5) })
 rng_sample
 # Obtain correlation
 cor_matrix = cor(rng_sample)
